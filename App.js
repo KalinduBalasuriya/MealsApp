@@ -1,20 +1,43 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import CategoriesScreen from './screens/CategoriesScreen';
+import { useFonts } from 'expo-font'
+import { createStackNavigator } from '@react-navigation/stack';
+import AppLoading from 'expo-app-loading';
+import MealsOverviewScreen from './screens/MealsOverviewScreen';
+
+const Stack = createStackNavigator();
 
 export default function App() {
+
+  const [fontsLoaded] = useFonts({
+    'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
+    'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <StatusBar style='dark' />
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="MealsCategories" component={CategoriesScreen} />
+          <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </>
   );
+
+
+
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+
   },
 });
