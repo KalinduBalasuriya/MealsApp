@@ -24,16 +24,26 @@ export default function App() {
     <>
       <StatusBar style='dark' />
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="MealsCategories" component={CategoriesScreen} />
+        <Stack.Navigator
+          screenOptions={{
+            headerStyle: { backgroundColor: '#350901' },
+            headerTintColor: 'white',
+            cardStyle: { backgroundColor: '#632419' }
+          }
+          }
+        >
+          <Stack.Screen
+            name="MealsCategories"
+            component={CategoriesScreen}
+            options={{
+              title: "All Categories",
+            }}
+          />
           <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
   );
-
-
-
 }
 
 const styles = StyleSheet.create({
@@ -41,3 +51,7 @@ const styles = StyleSheet.create({
 
   },
 });
+  
+  
+
+
