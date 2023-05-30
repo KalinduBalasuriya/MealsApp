@@ -6,6 +6,7 @@ import { useFonts } from 'expo-font'
 import { createStackNavigator } from '@react-navigation/stack';
 import AppLoading from 'expo-app-loading';
 import MealsOverviewScreen from './screens/MealsOverviewScreen';
+import MealDetailScreen from './screens/MealDetailScreen';
 
 const Stack = createStackNavigator();
 
@@ -22,7 +23,7 @@ export default function App() {
 
   return (
     <>
-      <StatusBar style='dark' />
+      <StatusBar style='light' />
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
@@ -39,6 +40,7 @@ export default function App() {
               title: "All Categories",
             }}
           />
+          <Stack.Screen name ='MealsDetail' component={MealDetailScreen}/>
           <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
         </Stack.Navigator>
       </NavigationContainer>
