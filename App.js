@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, } from 'react-native';
+import { StyleSheet, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import CategoriesScreen from './screens/CategoriesScreen';
 import { useFonts } from 'expo-font'
@@ -40,7 +40,7 @@ export default function App() {
               title: "All Categories",
             }}
           />
-          <Stack.Screen name ='MealsDetail' component={MealDetailScreen}/>
+          <Stack.Screen name ='MealsDetail' component={MealDetailScreen} />
           <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
         </Stack.Navigator>
       </NavigationContainer>
@@ -50,7 +50,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-
+  
   },
 });
   

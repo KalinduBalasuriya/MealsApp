@@ -16,7 +16,7 @@ function MealItem({ id, title, imageUrl, duration, complexity, affordability,  }
     return (
         <View style={styles.MealItem}>
             <Pressable
-                android_ripple={{ color: '#cccc' }}
+                 android_ripple={{ color: '#cccc' }}
                 style={({ pressed }) =>
                     pressed ? styles.buttonPressed : null}
                 onPress = {selectMealItemHandler}
