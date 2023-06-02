@@ -13,17 +13,20 @@ function MealDetailScreen({ route, navigation }) {
 
     const selectedMeal = MEALS.find((meal) => meal.id === mealId);
 
-    function headerButtonPressHandler(){
-     console.log('Pressed!');
+    function headerButtonPressHandler() {
+        console.log('Pressed!');
     }
 
-    useLayoutEffect(()=>{
+    useLayoutEffect(() => {
         navigation.setOptions({
-            headerRight : () =>{
-                return <HeaderButton onPress = {headerButtonPressHandler}> Tap Me </HeaderButton>
+            headerRight: () => {
+                return <HeaderButton
+                    icon="ios-star"
+                    color="white"
+                    onPress={headerButtonPressHandler} />;
             }
-        })
-    },[navigation, headerButtonPressHandler]);
+        });
+    }, [navigation, headerButtonPressHandler]);
 
     return (
         <ScrollView style={styles.rootContainer}>
