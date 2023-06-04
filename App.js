@@ -16,14 +16,14 @@ const Drawer = createDrawerNavigator();
 
 
 
-// function DrawerNavigator() {
-//   return(
-//   <Drawer.Navigator>
-//     <Drawer.Screen name="Categories" component={CategoriesScreen} />
-//     <Drawer.Screen name="Favourites" component={FavouritesScreen} />
-//   </Drawer.Navigator>
-//   );
-// }
+function DrawerNavigator() {
+  return(
+  <Drawer.Navigator>
+    <Drawer.Screen name="Categories" component={CategoriesScreen} />
+    <Drawer.Screen name="Favourites" component={FavouritesScreen} />
+  </Drawer.Navigator>
+  );
+}
 export default function App() {
 
   const [fontsLoaded] = useFonts({
@@ -40,10 +40,7 @@ export default function App() {
     <>
       <StatusBar style='light' />
       <NavigationContainer>
-        <Drawer.Navigator>
-          <Drawer.Screen name="TestScreen" component={test} />
-          
-        </Drawer.Navigator>
+        
         <Stack.Navigator
           screenOptions={{
             headerStyle: { backgroundColor: '#2b0f0b' },
@@ -53,8 +50,8 @@ export default function App() {
           }
         >
           <Stack.Screen
-            name="Categories"
-            component={CategoriesScreen}
+            name="Drawer"
+            component={DrawerNavigator}
             options={{
               title: "All Categories",
             }}
