@@ -2,14 +2,13 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import CategoriesScreen from './screens/CategoriesScreen';
-import { useFonts } from 'expo-font'
+import { useFonts } from 'expo-font';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AppLoading from 'expo-app-loading';
 import MealsOverviewScreen from './screens/MealsOverviewScreen';
 import MealDetailScreen from './screens/MealDetailScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import FavouritesScreen from './screens/FavouritesScreen';
-import test from './screens/test';
 import { Ionicons } from 'expo-vector-icons';
 
 const Stack = createNativeStackNavigator();
