@@ -11,18 +11,19 @@ import { addFavourite, removeFavourite } from "../store/redux/favourites";
 
 function MealDetailScreen({ route, navigation }) {
 
-    const mealId = route.params.mealId;
     const favouriteMealIds = useSelector((state) => state.favouriteMeals.ids);
     const dispatch = useDispatch();
+    
+    const mealId = route.params.mealId;
     const selectedMeal = MEALS.find((meal) => meal.id === mealId);
 
     const mealIsFavourite = favouriteMealIds.includes(mealId);
 
     function headerButtonPressHandler() {
         if (mealIsFavourite) {
-            dispatch(removeFavourite({id:mealId}));
+            dispatch(removeFavourite({ id: mealId }));
         } else {
-            dispatch(addFavourite({id:mealId}));
+            dispatch(addFavourite({ id: mealId }));
         }
     }
 
@@ -30,7 +31,7 @@ function MealDetailScreen({ route, navigation }) {
         navigation.setOptions({
             headerRight: () => {
                 return <HeaderButton
-                    icon="ios-star"
+                    icon={mealIsFavourite ? "ios-star" : "ios-star-outline"}
                     color="white"
                     onPress={headerButtonPressHandler} />;
             }

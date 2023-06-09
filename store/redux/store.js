@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { addFavourite, removeFavourite } from "./favourites";
 import favouritesReducer from "./favourites";
 
 export const store = configureStore({
@@ -7,3 +6,4 @@ export const store = configureStore({
         favouriteMeals : favouritesReducer
     }
 });
+

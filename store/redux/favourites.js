@@ -6,10 +6,10 @@ const favouriteSlice = createSlice({
         ids : []
     },
     reducers:{
-        addFavourite:(state)=>{
+        addFavourite:(state, action)=>{
            state.ids.push(action.payload.id);
         },
-        removeFavourite:(state)=>{
+        removeFavourite:(state, action)=>{
             state.ids.splice(state.ids.indexOf(action.payload.id),1);
          }
     }
